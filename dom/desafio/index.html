@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+
+<div id="app">
+   <p>Usando o vuejs - {{name}} ({{idade}})</p>
+   <p>{{multiplicaIdade()}} - {{idade*3}}</p>
+   <p>{{numeroRandomico()}} - {{Math.random()}}</p>
+   <div>
+        <img v-bind:src="capyImage" height="100" alt="">
+   </div>
+   <div>
+        <input type="text" v-bind:value="name">
+   </div>
+</div>
+
+<script>
+
+     new Vue({
+     el: '#app',
+     data: {
+          name: 'Raquel',
+          idade: '20',
+          capyImage: 'https://www.infoescola.com/wp-content/uploads/2008/05/capivara-119654188-1000x667.jpg'
+     },
+     methods: {
+          multiplicaIdade() {
+               return this.idade*3
+          },
+          numeroRandomico() {
+               return Math.random()
+          }
+     }
+     })
+
+</script>
